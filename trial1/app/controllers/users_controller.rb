@@ -5,12 +5,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def edit
   end
 
@@ -19,4 +13,20 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  def new
+  end
+
+  def create
+    @user = User.create(user_params)
+    login(@user)
+    redirect_to @user
+  end
+
+  private
+
+  def user_params
+     params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
+
 end
