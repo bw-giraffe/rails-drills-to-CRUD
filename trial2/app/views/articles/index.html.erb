@@ -1,5 +1,13 @@
-<h1>Welcome!</h1>
+<h1>Articles</h1>
 
 <div>
-There are currently <%= @users.length %> signed_up
+<% @articles.each do |article| %>
+<div>
+<a href="/articles/<%= article.id %>"><h4> <%= article.title %></h4></a>
+<p>
+published 
+<%= article.created_at %>
+</p>
 </div>
+<br>
+<% end %>

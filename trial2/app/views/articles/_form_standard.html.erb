@@ -1,6 +1,5 @@
-<h1>Articles#edit</h1>
 
-<%= form_for @article, url: {action: "update"} do |f| %>
+<%= form_for @article, url: {action: "create"} do |f| %>
 <p>
 	<%= f.text_field :title, :placeholder => "article title"%>
 	</p>
