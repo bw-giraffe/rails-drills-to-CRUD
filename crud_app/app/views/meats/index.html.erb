@@ -1,0 +1,9 @@
+<h1>Meat Selection</h1>
+
+<div>
+<% @meats.each do |meat| %>
+<div>
+<a href="/meats/<%= meat.id %>"> <%= meat.name %></a>
+</div>
+<br>
+<% end %>

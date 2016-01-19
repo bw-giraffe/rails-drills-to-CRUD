@@ -1,0 +1,18 @@
+<h2>Meat Information</h2>
+<%= @meat.name %>
+price per kg
+<%= @meat.price %>
+<br>
+<br>
+Sold by: <strong> <%= @meat.vendor.codename %></strong>
+<br>
+<br>
+Deals in:
+<%= @meat.vendor.currency %>
+<br>
+Offers free shipping?
+<%= @meat.vendor.free_shipping %>
+<br>
+<br>
+CAD conversion per kg
+<%= @conversion %>
