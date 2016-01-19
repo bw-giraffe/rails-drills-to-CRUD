@@ -27,10 +27,12 @@ Rails.application.routes.draw do
 
   get "/articles/:id/edit", to: "articles#edit"
 
-  patch "/articles/:id/update", to: "articles#update"
+  patch "/articles/:id/update", to: "articles#update", as: "article"
+
+  delete "/articles/:id", to: "articles#destroy"
 
   # get 'articles/index'
- # get 'sessions/new'
+  # get 'sessions/new'
   # get 'articles/create'
   # get 'sessions/create'
   # get 'articles/show'

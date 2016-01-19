@@ -2,3 +2,12 @@
 <p>
 <%= @article.content %>
 </p>
+
+<% if current_user && current_user == @article.user %>
+<p>
+    <a href="/articles/<%= @article.id %>/edit" class="btn btn-default">Edit Article</a>
+    <a href="/articles/<%= @article.id %>" data-method="delete" class="btn btn-default" >Delete Article</a>
+  </p>
+ <% end %>
+
+ 

@@ -27,17 +27,21 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    p 'YOU HAVE ENTERED UPDATEEEEEEEEE'
-    p article_params
-    @article = @article.update(article_params)
-    if @article.update
+    @article = Article.find_by_id(params[:id])
+    if @article.update(article_params)
       redirect_to "/articles/#{@article.id}"
-    else
+    else 
       redirect_to "/articles"
-    end 
+    end
   end
 
   def destroy
+    @article = Article.find_by_id(params[:id])
+    if @article.destroy
+      redirect_to "/articles"
+    else 
+      redirect_to "/articles/#{@article.id}"
+    end
   end
 
   private
